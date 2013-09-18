@@ -1,14 +1,17 @@
 Description:
 ------------
+
 Installs and configures ElasticSearch on AWS OpsWorks.
 
 Requirements:
 -------------
+
 * AmazonLinux AMI
 * Chef 0.9
 
 Usage:
 ------
+
 To use these cookbooks with OpsWorks, include this repo as a submodule into your own cookbooks as a recipe.
 In opsworks, create a new layer with a short name of `elasticsearch`. Add your repository as the Custom Chef Recipes repository.
 Next configure OpsWorks to run these recipes:
