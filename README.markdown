@@ -16,8 +16,8 @@ To use these cookbooks with OpsWorks, include this repo as a submodule into your
 In opsworks, create a new layer with a short name of `elasticsearch`. Add your repository as the Custom Chef Recipes repository.
 Next configure OpsWorks to run these recipes:
 
-Setup: `elasticsearch::install, elasticsearch::packages`
-Configure: `elasticsearch`
+* Setup: `elasticsearch::install, elasticsearch::packages`
+* Configure: `elasticsearch`
 
 Add an EBS volume with a mount point of `/data`.
 
