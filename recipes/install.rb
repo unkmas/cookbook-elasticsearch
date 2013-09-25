@@ -34,7 +34,7 @@ link "#{node[:elasticsearch][:home_dir]}" do
 end
 
 if !!node[:elasticsearch][:basic_auth]
-  cookbook_file "#{elasticsearch[:path][:plugins]}/elasticsearch-http-basic-1.0.3.jar" do
+  cookbook_file "#{node[:elasticsearch][:path][:plugins]}/elasticsearch-http-basic-1.0.3.jar" do
     source "elasticsearch-http-basic-1.0.3.jar"
     backup false
     action :create_if_missing
