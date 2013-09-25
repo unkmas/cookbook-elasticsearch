@@ -29,6 +29,14 @@ script "install_elasticsearch" do
 end
 
 # Create Symlink
-  link "#{node[:elasticsearch][:home_dir]}" do
+link "#{node[:elasticsearch][:home_dir]}" do
   to "#{node[:elasticsearch][:home_dir]}-#{node[:elasticsearch][:version]}"
+end
+
+if !!node[:elasticsearch][:basic_auth]
+  cookbook_file "#{elasticsearch[:path][:plugins]}/elasticsearch-http-basic-1.0.3.jar" do
+    source "elasticsearch-http-basic-1.0.3.jar"
+    backup false
+    action :create_if_missing
+  end
 end
