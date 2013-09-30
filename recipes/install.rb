@@ -36,6 +36,11 @@ link "#{node[:elasticsearch][:home_dir]}" do
 end
 
 if !!node[:elasticsearch][:basic_auth]
+  directory node[:elasticsearch][:path][:plugins] do
+    owner node[:elasticsearch][:user]
+    group node[:elasticsearch][:user]
+  end
+
   cookbook_file "#{node[:elasticsearch][:path][:plugins]}/elasticsearch-http-basic-1.0.3.jar" do
     source "elasticsearch-http-basic-1.0.3.jar"
     backup false
