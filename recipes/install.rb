@@ -41,7 +41,7 @@ if !!node[:elasticsearch][:basic_auth]
     group node[:elasticsearch][:user]
   end
 
-  cookbook_file "#{node[:elasticsearch][:path][:plugins]}/elasticsearch-http-basic-1.0.3.jar" do
+  cookbook_file "#{node[:elasticsearch][:path][:plugins]}/http-basic" do
     source "elasticsearch-http-basic-1.0.3.jar"
     backup false
     action :create_if_missing
