@@ -31,6 +31,7 @@ end
 # Create Symlink
 link "#{node[:elasticsearch][:home_dir]}" do
   to "#{node[:elasticsearch][:home_dir]}-#{node[:elasticsearch][:version]}"
+  not_if "ls #{node[:elasticsearch][:home_dir]}"
 end
 
 if !!node[:elasticsearch][:basic_auth]
