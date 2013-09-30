@@ -26,6 +26,7 @@ script "install_elasticsearch" do
     tar xvzf #{node[:elasticsearch][:filename]} -C #{node[:elasticsearch][:dir]}
     ln -s "#{node[:elasticsearch][:home_dir]}-#{node[:elasticsearch][:version]}" #{node[:elasticsearch][:home_dir]}
   EOH
+  not_if "ls #{node[:elasticsearch][:home_dir]}-#{node[:elasticsearch][:version]}"
 end
 
 # Create Symlink
