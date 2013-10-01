@@ -43,6 +43,9 @@ if !!node[:elasticsearch][:basic_auth]
 
   cookbook_file "#{node[:elasticsearch][:path][:plugins]}/http-basic" do
     source "elasticsearch-http-basic-1.0.3.jar"
+    owner node[:elasticsearch][:user]
+    group node[:elasticsearch][:user]
+    mode 0755
     backup false
     action :create_if_missing
   end
