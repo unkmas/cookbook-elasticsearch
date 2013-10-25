@@ -29,3 +29,6 @@ default.elasticsearch[:thread_stack_size] = "256k"
 
 # === NODE
 default.elasticsearch[:node][:name]    = "0"
+
+# === CLUSTER
+default.elasticsearch[:cluster][:name] = "elasticsearch"
